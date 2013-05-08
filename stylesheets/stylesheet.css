@@ -1,7 +1,7 @@
 body {
   margin: 0;
   padding: 0;
-  background: #151515 url("../images/bkg.png") 0 0;
+  background: #222;
   color: #eaeaea;
   font: 16px;
   line-height: 1.5;
@@ -35,38 +35,39 @@ li {
    h2       - project description
 */
 
-header {
-  background: rgba(0, 0, 0, 0.1);
+footer {
   width: 100%;
-  border-bottom: 1px dashed #b5e853;
+  border-top: 1px dashed rgb(207, 106, 75);
+  padding: 20px 0;
+  margin: 40px 0 20px 0;
+}
+footer p {
+  font-size: 12px;
+}
+
+header {
+  width: 100%;
+  border-bottom: 1px dashed rgb(207, 106, 75);
   padding: 20px 0;
   margin: 0 0 40px 0;
 }
 
 header h1 {
-  font-size: 30px;
+  font-size: 26px;
   line-height: 1.5;
-  margin: 0 0 0 -40px;
+  margin: 0 0 0 -30px;
   font-weight: bold;
   font-family: Monaco, "Bitstream Vera Sans Mono", "Lucida Console", Terminal, monospace;
-  color: #b5e853;
-  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.1),
-               0 0 5px rgba(181, 232, 83, 0.1),
-               0 0 10px rgba(181, 232, 83, 0.1);
+  color: #fff;
   letter-spacing: -1px;
   -webkit-font-smoothing: antialiased;
-}
-
-header h1:before {
-  content: "./";
-  font-size: 24px;
 }
 
 header h2 {
   font-size: 18px;
   font-weight: 300;
-  margin: 0 0 0 -35px;
-  color: #666;
+  margin: 0 0 0 -30px;
+  color: #ccc;
 }
 
 /* Main Content
@@ -83,11 +84,8 @@ section img {
 h1, h2, h3, h4, h5, h6 {
   font-weight: normal;
   font-family: Monaco, "Bitstream Vera Sans Mono", "Lucida Console", Terminal, monospace;
-  color: #b5e853;
+  color: #FCC240;
   letter-spacing: -0.03em;
-  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.1),
-               0 0 5px rgba(181, 232, 83, 0.1),
-               0 0 10px rgba(181, 232, 83, 0.1);
 }
 
 #main_content h1 {
