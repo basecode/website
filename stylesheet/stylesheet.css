@@ -3,9 +3,12 @@ body {
   padding: 0;
   background: #222;
   color: #eaeaea;
-  font: 16px;
-  line-height: 1.5;
-  font-family: Monaco, "Bitstream Vera Sans Mono", "Lucida Console", Terminal, monospace;
+  line-height: 1.5em;
+  font-family: "Droid Sans", Monaco, "Bitstream Vera Sans Mono", "Lucida Console", Terminal, monospace;
+  font-style: normal;
+  font-weight: 400;
+  letter-spacing: 0.08em;
+  -webkit-font-smoothing: antialiased;
 }
 
 /* General & 'Reset' Stuff */
@@ -36,13 +39,13 @@ li {
 */
 
 h1 {
-  font-size: 26px;
-  line-height: 1.5;
+  font-size: 1.7em;
+  line-height: 1.3em;
   margin: 0 0 0 -30px;
   font-weight: bold;
   font-family: Monaco, "Bitstream Vera Sans Mono", "Lucida Console", Terminal, monospace;
   color: #fff;
-  letter-spacing: -1px;
+  letter-spacing: -0.04em;
   -webkit-font-smoothing: antialiased;
 }
 
@@ -55,6 +58,10 @@ h3 {
   font-weight:bold;
 }
 
+p {
+  font-size: 1.1em;
+}
+
 footer {
   width: 100%;
   border-top: 1px dashed rgb(207, 106, 75);
@@ -62,7 +69,7 @@ footer {
   margin: 40px 0 20px 0;
 }
 footer p {
-  font-size: 12px;
+  font-size: 0.9em;
 }
 
 header {
@@ -73,9 +80,9 @@ header {
 }
 
 header span {
-  font-size: 14px;
+  font-size: 0.6em;
   font-weight: 300;
-  padding-left: 0.5em;
+  padding-left: 0.2em;
 }
 
 /* Main Content
@@ -83,7 +90,6 @@ header span {
 
 #main_content {
   width: 100%;
-  -webkit-font-smoothing: antialiased;
 }
 section img {
   max-width: 100%
