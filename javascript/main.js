@@ -1,12 +1,9 @@
-(function tracking(doc) {
-  if (doc.location.hostname === 'localhost')
-    return;
+if (document.location.hostname !== 'localhost') {
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 
-  var gaJsHost = (("https:" == doc.location.protocol) ? "https://ssl." : "http://www.");
-  doc.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
-})(document);
-
-try {
-  var pageTracker = _gat._getTracker("UA-39978115-1");
-  pageTracker._trackPageview();
-} catch(err) {}
+  ga('create', 'UA-39978115-1', 'basecode.de');
+  ga('send', 'pageview');
+}
