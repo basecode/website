@@ -49,6 +49,11 @@ h1 {
   -webkit-font-smoothing: antialiased;
 }
 
+h1 a {
+  color: #fff;
+  text-decoration: none;
+}
+
 h3 {
   font-family: Monaco, "Bitstream Vera Sans Mono", "Lucida Console", Terminal, monospace;
   color: #FCC240;
