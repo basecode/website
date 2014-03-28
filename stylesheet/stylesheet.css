@@ -25,7 +25,10 @@ section {
 }
 
 h1, h2, h3, h4, h5, h6 {
-  margin: 0 0 1em;
+  font-family: Monaco, "Bitstream Vera Sans Mono", "Lucida Console", Terminal, monospace;
+  letter-spacing: -0.01em;
+  -webkit-font-smoothing: antialiased;
+  margin: 1em 0 1em -1em;
 }
 
 li {
@@ -41,25 +44,29 @@ li {
 h1 {
   font-size: 1.7em;
   line-height: 1.3em;
-  margin: 0 0 0 -30px;
+  margin-top: 0;
+  margin-bottom: 0;
+  margin-left: -0.7em;
   font-weight: bold;
-  font-family: Monaco, "Bitstream Vera Sans Mono", "Lucida Console", Terminal, monospace;
   color: #fff;
-  letter-spacing: -0.04em;
-  -webkit-font-smoothing: antialiased;
 }
 
-h1 a {
+h1>a {
   color: #fff;
   text-decoration: none;
 }
 
+h2 {
+  color: #40FCDE;
+  line-height: 1.3em;
+  font-size: 2em;
+  margin-left:-0.6em;
+  font-weight:bold;
+}
+
 h3 {
-  font-family: Monaco, "Bitstream Vera Sans Mono", "Lucida Console", Terminal, monospace;
   color: #FCC240;
-  letter-spacing: -0.03em;
   font-size: 1.1em;
-  margin-left:-20px;
   font-weight:bold;
 }
 
@@ -90,32 +97,11 @@ header span {
   padding-left: 0.2em;
 }
 
-/* Main Content
-*/
-
-
 section img {
   max-width: 100%
 }
 
-dt {
-  font-style: italic;
-  font-weight: bold;
-}
 
-ul li {
-  list-style: none;
-}
-
-ul li:before {
-  content: ">>";
-  font-family: Monaco, "Bitstream Vera Sans Mono", "Lucida Console", Terminal, monospace;
-  font-size: 13px;
-  color: #b5e853;
-  margin-left: -37px;
-  margin-right: 21px;
-  line-height: 16px;
-}
 
 blockquote {
   color: #aaa;
