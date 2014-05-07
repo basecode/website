@@ -169,6 +169,11 @@ a {
   zoom:1;
 }
 
+/* h-card */
+.p-nickname, .u-url, .p-note, .u-photo {
+  display: none;
+}
+
 @media all and (max-device-width : 699px) {
 
   body {
