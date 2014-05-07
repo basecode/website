@@ -175,7 +175,7 @@ a {
 }
 
 /* h-entry */
-.h-entry .p-name {
+.h-entry .p-name, .h-entry .p-author, .h-entry .dt-published, .h-entry .u-url {
   display: none;
 }
 
