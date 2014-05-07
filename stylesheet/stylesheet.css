@@ -2,6 +2,7 @@ body {
   margin: 0;
   padding: 0;
   background: #222;
+  font-size: 16px;
   color: #eaeaea;
   line-height: 1.5em;
   font-family: "Droid Sans", Monaco, "Bitstream Vera Sans Mono", "Lucida Console", Terminal, monospace;
@@ -15,24 +16,19 @@ body {
 
 .container {
   width: 90%;
-  max-width: 700px;
+  max-width: 750px;
   margin: 0 auto;
 }
 
-section {
-  display: block;
-  margin: 0 0 20px 0;
+.content {
+  width: 100%;
+  background-color: #fff;
 }
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: Monaco, "Bitstream Vera Sans Mono", "Lucida Console", Terminal, monospace;
-  letter-spacing: -0.01em;
-  -webkit-font-smoothing: antialiased;
-  margin: 1em 0 1em -1em;
-}
-
-li {
-  line-height: 1.4 ;
+  letter-spacing: 0.01em;
+  padding: 0.7em 0;
+  margin: 0 0 0 -1em;
 }
 
 /* Header, <header>
@@ -43,22 +39,22 @@ li {
 
 h1 {
   font-size: 1.7em;
-  line-height: 1.3em;
-  margin-top: 0;
-  margin-bottom: 0;
-  margin-left: -0.7em;
+  line-height: 2em;
+  letter-spacing: -0.01em;
+  padding-top: 0;
+  padding-bottom: 0;
+  margin-left: -0.8em;
   font-weight: bold;
   color: #fff;
 }
 
 h1>a {
   color: #fff;
-  text-decoration: none;
 }
 
 h2 {
-  color: #40FCDE;
-  line-height: 1.3em;
+  color: #FCC240;
+  line-height: 1.1em;
   font-size: 2em;
   margin-left:-0.6em;
   font-weight:bold;
@@ -66,19 +62,24 @@ h2 {
 
 h3 {
   color: #FCC240;
-  font-size: 1.1em;
+  font-size: 1.3em;
   font-weight:bold;
 }
 
-p {
+p, ul {
   font-size: 1.1em;
+  padding: 0.5em 0;
+  margin:0;
+}
+p:last-child, ul:last-child {
+  padding-bottom: 2em;
 }
 
 footer {
   width: 100%;
   border-top: 1px dashed rgb(207, 106, 75);
   padding: 20px 0;
-  margin: 40px 0 20px 0;
+  margin: 0;
 }
 footer p {
   font-size: 0.9em;
@@ -87,14 +88,25 @@ footer p {
 header {
   width: 100%;
   border-bottom: 1px dashed rgb(207, 106, 75);
-  padding: 20px 0;
-  margin: 0 0 40px 0;
+}
+
+.headline {
+  width:100%;
+  border-bottom: 1px dashed rgb(207, 106, 75);
 }
 
 header span {
   font-size: 0.6em;
   font-weight: 300;
   padding-left: 0.2em;
+}
+
+ul {
+  list-style: none;
+}
+
+li {
+  line-height: 1.4em;
 }
 
 section img {
@@ -152,32 +164,33 @@ hr {
 a {
   color: #63c0f5;
   text-shadow: 0 0 5px rgba(104, 182, 255, 0.5);
+  text-decoration: none;
 }
 
-/* Clearfix */
-
-.cf:before, .cf:after {
-  content:"";
-  display:table;
-}
-
-.cf:after {
-  clear:both;
-}
-
-.cf {
-  zoom:1;
-}
-
-@media all and (max-device-width : 699px) {
+/* Make bigger font becauseidth of device is small */
+@media all and (max-device-width : 400px) {
 
   body {
-    font-size:50px;
+    font-size: 45px;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    padding: 0.4em 0;
+    margin: 0 0 0 -0.2em;
+  }
+
+  h1 {
+    line-height: 0.8em;
+  }
+
+  h2 {
+    font-size: 1.5em;
   }
 
 }
 
-@media all and (max-device-width : 699px), all and (max-width: 699px) {
+/* iPad and smaller (device-width) or screen-size smaller than max-width */
+@media all and (max-device-width : 768px), all and (max-width: 749px) {
 
  .container {
     max-width: none;
