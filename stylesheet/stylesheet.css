@@ -3,9 +3,17 @@ body {
   padding: 0;
   background: #222;
   font-size: 16px;
-  color: #eaeaea;
+  color: #222;
   font-family: MyriadPro-Regular, 'Myriad Pro Regular', MyriadPro, 'Myriad Pro', Lucida Sans, Segoe UI, Calibri, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
+}
+
+/* SVG */
+text, tspan {
+  font-family: MyriadPro-Regular, 'Myriad Pro Regular', MyriadPro, 'Myriad Pro', Lucida Sans, Segoe UI, Calibri, Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  fill: #222;
+  font-size:12;
 }
 
 /* General & 'Reset' Stuff */
@@ -24,7 +32,7 @@ body {
 h1, h2, h3, h4, h5, h6 {
   letter-spacing: 0.01em;
   padding: 0.7em 0;
-  margin: 0 0 0 -1em;
+  margin: 0;
 }
 
 h1 {
@@ -48,26 +56,36 @@ h2 {
   color: #FCC240;
   line-height: 1.2em;
   font-size: 2.5em;
-  margin-left:-0.6em;
   font-weight:bold;
   text-shadow: 0 2px 2px rgba(0,0,0,0.75);
-  font-family: 'Helvetica Neue', Helvetica, Arial;
 }
 
 h3 {
-  color: #FCC240;
   font-size: 1.5em;
   font-weight: bold;
-  font-family: 'Helvetica Neue', Helvetica, Arial;
 }
 
-p, ul {
+p, ul, blockquote {
   font-size: 1.4em;
-  padding: 0.5em 0;
-  margin:0;
+  margin: 0.7em 0;
+  padding: 0;
 }
-p:last-child, ul:last-child {
+
+p.hint {
+  background-color: #eee;
+  border-top: 1px solid #ddd;
+  border-bottom: 1px solid #ddd;
+  padding: 0.5em;
+  margin-top: 1em;
+}
+
+p:first-child, ul:first-child, blockquote:first-child {
+  padding-top: 1em;
+  margin-top: 0;
+}
+p:last-child, ul:last-child, blockquote:last-child {
   padding-bottom: 2em;
+  margin-bottom: 0;
 }
 
 footer {
@@ -97,50 +115,12 @@ header span {
 }
 
 ul {
-  list-style: none;
-}
-
-li {
-  line-height: 1.4em;
+  list-style: outside;
+  padding-left: 1.3em;
 }
 
 section img {
   max-width: 100%
-}
-
-blockquote {
-  color: #aaa;
-  padding-left: 10px;
-  border-left: 1px dotted #666;
-}
-
-pre {
-  background: rgba(0, 0, 0, 0.9);
-  border: 1px solid rgba(255, 255, 255, 0.15);
-  padding: 10px;
-  font-size: 14px;
-  color: #b5e853;
-  -moz-border-radius: 2px;
-  -webkit-border-radius: 2px;
-  border-radius: 2px;
-  text-wrap: normal;
-  overflow: auto;
-  overflow-y: hidden;
-}
-
-table {
-  width: 100%;
-  margin: 0 0 20px 0;
-}
-
-th {
-  text-align: left;
-  border-bottom: 1px dashed #b5e853;
-  padding: 5px 10px;
-}
-
-td {
-  padding: 5px 10px;
 }
 
 hr {
@@ -148,6 +128,25 @@ hr {
   border: 0;
   border-bottom: 1px dashed #b5e853;
   color: #b5e853;
+}
+
+code {
+  font-family: Consolas, "Liberation Mono", Menlo, Courier, monospace;
+  font-size: 0.85em;
+  background-color: #f8f8f8;
+  border-radius: 4px;
+  border: 1px solid #e7e7e7;
+  padding: 0 5px;
+}
+
+blockquote {
+  border-left: 4px solid #ddd;
+  padding-left: 15px;
+  color: #777;
+}
+
+blockquote p {
+  padding: 0;
 }
 
 /* Links
@@ -158,6 +157,10 @@ a {
   color: #63c0f5;
   text-shadow: 0 0 5px rgba(104, 182, 255, 0.5);
   text-decoration: none;
+}
+
+.content a {
+  color: #1476AD;
 }
 
 /* IndieWeb h-card & h-entry */
@@ -174,12 +177,12 @@ a {
 @media all and (max-device-width : 400px) {
 
   body {
-    font-size: 45px;
+    font-size: 35px;
   }
 
   h1, h2, h3, h4, h5, h6 {
     padding: 0.4em 0;
-    margin: 0 0 0 -0.2em;
+    margin: 0;
   }
 
   h1 {
