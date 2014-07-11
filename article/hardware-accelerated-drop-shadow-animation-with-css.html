@@ -6,7 +6,16 @@
 
     <link rel="stylesheet" type="text/css" href="../stylesheet/stylesheet.css" media="screen" />
 
-    <title>Hardware accelerated drop-shadow animation</title>
+    <style type="text/css">
+    .illustration-paint-selection a {
+      background-color: #222;
+      color: #FCC240;
+      padding: 5px 10px;
+      border-radius: 2px;
+    }
+    </style>
+
+    <title>GPU Composited CSS: box-shadow</title>
   </head>
 
   <body>
@@ -25,11 +34,14 @@
 
     <section class="headline">
       <div class="container">
-        <h2>Hardware accelerated `drop-shadow` animation with CSS</h2>
+        <h2>GPU Composited CSS: box-shadow</h2>
       </div>
     </section>
 
     <!--
+
+    https://twitter.com/basecode/status/445503251480211456
+
     http://aerotwist.com/tutorials/protip-nobody-expects-3d/
 
     http://blogs.adobe.com/webplatform/2014/03/18/css-animations-and-transitions-performance/
@@ -37,12 +49,76 @@
     http://dev.chromium.org/developers/design-documents/compositor-thread-architecture
 
     http://dev.chromium.org/developers/design-documents/gpu-accelerated-compositing-in-chrome
+
     //-->
 
     <section class="content">
       <div class="container">
-        <h3>some other random text</h3>
-        <p>asdaskdal and even more text</p>
+
+        <p>
+        In <a href="http://aerotwist.com/">Paul Lewis's</a> article <a href="http://aerotwist.com/tutorials/protip-nobody-expects-3d/">Interaction Pro Tips – Nobody expects 3D</a>, he shows a neat visual effect by animating the CSS Property <code>box-shadow</code>. At the end of the section he mentions
+        </p>
+
+        <blockquote>
+        Neat huh? The only downer is that the use of <code>box-shadow</code> during the animation causes paints, so I can’t wholeheartedly recommend it for use on mobile devices (sad face).
+        </blockquote>
+
+        <p>
+        A paint is an indicator that the Browser updates a texture and sends it over to the GPU. It is a costly operation and doing this on every frame of the Animation, whereby a frame is supposed to take not longer than ~16ms, is clearly something we should avoid.
+        </p>
+
+        <blockquote>
+        For high performance animations you always want to limit yourself to compositor-friendly options, like I said at the start, where the GPU gives you a hand and you avoid layout and paint.
+        </blockquote>
+
+        <p>
+        Compositor-friendly CSS Properties are…
+        </p>
+
+        <ul>
+          <li><code>transform</code> (translate, scale, rotate, skew, matrix)</li>
+          <li><code>opacity</code></li>
+        </ul>
+
+        <h3>
+        How am I supposed to animate <code>box-shadow</code> with <code>transform</code> and <code>opacity</code>?
+        </h3>
+
+        <p>
+        <a href="http://ariya.ofilabs.com/about">Ariya Hidayat</a> has a great answer to this question. His article <a href="http://java.dzone.com/articles/tricks-gpu-composited-css">Tricks for GPU Composited CSS</a> points out 2 very efficient tricks.
+        </p>
+
+        <ul>
+          <li>Avoid continous texture updates</li>
+          <li>Use hardware accelerated CSS-Filters when possible or "fake interpolate" the in-between states of the Animation by providing an initial and final state and only tween opacity</li>
+        </ul>
+
+        <p>
+        I'm going to use the "fake interpolate" trick since CSS-Filters are not fully supported or enabled by default by all Browsers.
+        </p>
+
+        <h3>The Animation</h3>
+
+        <p>
+          <!--<a class="jsbin-embed" href="http://jsbin.com/nolajuti/6/embed?output&height=30rem"></a><script src="http://static.jsbin.com/js/embed.js"></script>//-->
+        </p>
+
+        <p>
+        Initially I create all layers that are supposed to be involved in the animation. In this case 3 layers, named "small", "big" and "content". Layers that are not visible within Frame 1 are hidden using <code>opacity:0</code> instead of <code>display:none</code>. That way I make sure that the layer is already drawn but not visible, which reduces the setup costs of the Animation.
+        </p>
+
+        <p>
+          <object type="image/svg+xml" data="slice1.svg" class="image1" style="width:100%">
+            This image cannot be displayed because your device does not support SVG.
+          </object>
+        </p>
+
+        <p>
+        Frame 1 is now fully visible and ready to kick off. Following the "fake interpolate" approach, the only thing we now need is to prepare the final state of the animation.
+        </p>
+
+
+
       </div>
     </section>
 
