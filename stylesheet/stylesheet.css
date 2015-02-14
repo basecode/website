@@ -1,18 +1,18 @@
 body {
   margin: 0;
   padding: 0;
-  background: #222;
-  font-size: 16px;
-  color: #222;
-  font-family: MyriadPro-Regular, 'Myriad Pro Regular', MyriadPro, 'Myriad Pro', Lucida Sans, Segoe UI, Calibri, Helvetica, Arial, sans-serif;
+  background: #fff;
+  font-size: 15px;
+  color: #444;
+  font-family: "Lucida Grande", "Lucida Sans Unicode", Helvetica, Arial, Verdana, sans-serif;
   -webkit-font-smoothing: antialiased;
 }
 
 /* SVG */
 text, tspan {
-  font-family: MyriadPro-Regular, 'Myriad Pro Regular', MyriadPro, 'Myriad Pro', Lucida Sans, Segoe UI, Calibri, Helvetica, Arial, sans-serif;
+  font-family: "Lucida Grande", "Lucida Sans Unicode", Helvetica, Arial, Verdana, sans-serif;
   -webkit-font-smoothing: antialiased;
-  fill: #222;
+  fill: #444;
   font-size:12;
 }
 
@@ -31,29 +31,27 @@ text, tspan {
 
 h1, h2, h3, h4, h5, h6 {
   letter-spacing: 0.01em;
-  padding: 0.7em 0;
+  padding: 1.5em 0 0 0;
   margin: 0;
 }
 
 h1 {
-  font-size: 1.7em;
+  font-size: 2.8em;
   line-height: 2em;
   letter-spacing: -0.01em;
   padding-top: 0;
   padding-bottom: 0;
-  margin-left: -0.8em;
   font-weight: bold;
   color: #fff;
-  font-family: Monaco;
 }
 
 h1>a {
-  color: #fff;
+  color: rgba(0,0,0,0.8);
   text-shadow: none;
 }
 
 h2 {
-  color: #FCC240;
+  color: rgba(0,0,0,0.8);
   line-height: 1.2em;
   font-size: 2.5em;
   font-weight:bold;
@@ -67,8 +65,8 @@ h3 {
 
 p, ul, blockquote {
   font-size: 1.4em;
-  margin: 0.7em 0;
-  padding: 0;
+  padding: 0.5em 0 0 0;
+  margin: 0;
 }
 
 p.hint {
@@ -90,23 +88,22 @@ p:last-child, ul:last-child, blockquote:last-child {
 
 footer {
   width: 100%;
-  border-top: 1px dashed rgb(207, 106, 75);
+  border-top: 1px solid #eee;
   padding: 20px 0;
   margin: 0;
 }
 footer p {
   font-size: 0.9em;
-  color: #eaeaea;
 }
 
 header {
   width: 100%;
-  border-bottom: 1px dashed rgb(207, 106, 75);
+  border-bottom: 1px solid #eee;
 }
 
 .headline {
   width:100%;
-  border-bottom: 1px dashed rgb(207, 106, 75);
+  border-bottom: 1px solid #eee;
 }
 
 header span {
@@ -155,7 +152,7 @@ blockquote p {
 */
 
 a {
-  color: #63c0f5;
+  color: #08c;
   text-shadow: 0 0 5px rgba(104, 182, 255, 0.5);
   text-decoration: none;
 }
